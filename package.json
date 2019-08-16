@@ -1,0 +1,11 @@
+{
+  "name": "wetuve",
+  "version": "1.0.0",
+  "description": "Cloning Youtuve with Vanilla and NodeJS",
+  "main": "index.js",
+  "author": "friendmy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
