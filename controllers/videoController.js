@@ -14,12 +14,15 @@ export const search = async (req, res) => {
 	const {
 		query: { term: searchingBy }
 	} = req;
+	let videos = [];
 	try {
-		const videos = await Video.find({ title: searchingBy });
-		res.render("Search", { pageTitle: "Search", searchingBy, videos });
+		videos = await Video.find({
+			title: { $regex: searchingBy, $options: "i" }
+		});
 	} catch (error) {
-		res.redirect(routes.home);
+		console.log(error);
 	}
+	res.render("Search", { pageTitle: "Search", searchingBy, videos });
 };
 
 export const getUpload = (req, res) => {
