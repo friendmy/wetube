@@ -1,8 +1,9 @@
 import routes from "../routes";
+import User from "../models/User";
 
 export const getJoin = (req, res) => res.render("join",{pageTitle: "Join"});
 
-export const postJoin = (req, res) => {
+export const postJoin = async (req, res) => {
     const {
         body: { name, email, password, password2 }
     } = req;
@@ -11,7 +12,7 @@ export const postJoin = (req, res) => {
         res.status(400);
         res.render("join", {pageTitle: "join"})
     } else {
-        // To Do: Register User
+        const user = await User.create({})
         // To Do: Log user in
         res.redirect(routes.home)
     }
