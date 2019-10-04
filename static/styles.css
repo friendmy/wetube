@@ -273,7 +273,7 @@ input[type="submit"] {
     width: 100%; }
   .form-container .fileUpload label {
     font-weight: 300;
-    margin-right: 9px; }
+    margin-right: 10px; }
 
 .social-login {
   display: flex;
@@ -334,14 +334,14 @@ input[type="submit"] {
     .video-detail__container .video__info .video__views,
     .video-detail__container .video__info .video__description {
       display: block;
-      margin-bottom: 16px; }
+      margin-bottom: 15px; }
     .video-detail__container .video__info .video__title {
       font-size: 22px;
       font-weight: 300; }
     .video-detail__container .video__info .video__views {
       font-size: 14px; }
     .video-detail__container .video__info .video__description {
-      font-size: 18px; }
+      font-size: 16px; }
   .video-detail__container .video__comments {
     margin-top: 25px; }
     .video-detail__container .video__comments .video__comment-number {
