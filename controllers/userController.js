@@ -123,7 +123,28 @@ export const userDetail = async (req, res) => {
 	}
 };
 
-export const editProfile = (req, res) =>
+export const getEditProfile = (req, res) =>
 	res.render("editProfile", { pageTitle: "Edit Profile" });
+
+export const postEditProfile = async (req, res) => {
+	const {
+		body: { name, email },
+		file
+	} = req;
+	console.log(file);
+
+	try {
+		const user = await User.findOneAndUpdate(
+			{ _id: req.user._id },
+			{ name, email, avatarUrl: file ? file.path : req.user.avatarUrl }
+		);
+		console.log(user);
+
+		res.redirect(routes.me);
+	} catch (error) {
+		res.render("editProfile", { pageTitle: "Edit Profile" });
+	}
+};
+
 export const changePassword = (req, res) =>
 	res.render("changePassword", { pageTitle: "Change Password" });
