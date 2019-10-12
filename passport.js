@@ -30,7 +30,6 @@ passport.use(
       profileFields: ["id", "displayName", "photos", "email"],
       scope: ["public_profile", "email"]
     },
-
     facebookLoginCallback
   )
 );

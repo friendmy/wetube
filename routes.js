@@ -35,7 +35,6 @@ const routes = {
 	search: SEARCH,
 	users: USERS,
 	userDetail: id => {
-		console.log(id);
 		if (id) {
 			return `/users/${id}`;
 		} else {

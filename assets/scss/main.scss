@@ -26,9 +26,9 @@ textarea,
 	border: none;
 	border-radius: 5px;
 	font-size: 14px;
-	background-color: white;
 	color: $black;
 	font-weight: 600;
+  background-color: white;
 	max-width: 320px;
 	resize: none;
 	&::placeholder {
@@ -36,10 +36,9 @@ textarea,
 		color: rgba(0, 0, 0, 0.7);
 	}
 }
-
 button {
 	border: none;
-	background-color: #3a98db;
+  background-color: #3498db;
 	color: white;
 }
 
@@ -47,10 +46,7 @@ button.delete {
 	background-color: $dark-red;
 }
 
-button {
-	cursor: pointer;
-}
-
+button,
 input[type="submit"] {
 	cursor: pointer;
 }
