@@ -1,8 +1,8 @@
 import express from "express";
 import routes from "../routes";
 import {
-    userDetail,
-    getEditProfile,
+  userDetail,
+  getEditProfile,
   getChangePassword,
   postEditProfile,
   postChangePassword

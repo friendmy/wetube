@@ -32,46 +32,46 @@ const FB = "/auth/facebook";
 const FB_CALLBACK = "/auth/facebook/callback";
 
 const routes = {
-	home: HOME,
-	join: JOIN,
-	login: LOGIN,
-	logout: LOGOUT,
-	search: SEARCH,
-	users: USERS,
-	userDetail: id => {
-		if (id) {
-			return `/users/${id}`;
-		} else {
-			return USER_DETAIL;
-		}
-	},
-	editProfile: EDIT_PROFILE,
-	changePassword: CHANGE_PASSWORD,
-	videos: VIDEOS,
-	upload: UPLOAD,
-	videoDetail: id => {
-		if (id) {
-			return `/videos/${id}`;
-		} else {
-			return VIDEO_DETAIL;
-		}
-	},
-	editVideo: id => {
-		if (id) {
-			return `/videos/${id}/edit`;
-		} else {
-			return EDIT_VIDEO;
-		}
-	},
-	deleteVideo: id => {
-		if (id) {
-			return `/videos/${id}/delete`;
-		} else {
-			return DELETE_VIDEO;
-		}
-	},
+  home: HOME,
+  join: JOIN,
+  login: LOGIN,
+  logout: LOGOUT,
+  search: SEARCH,
+  users: USERS,
+  userDetail: id => {
+    if (id) {
+      return `/users/${id}`;
+    } else {
+      return USER_DETAIL;
+    }
+  },
+  editProfile: EDIT_PROFILE,
+  changePassword: CHANGE_PASSWORD,
+  videos: VIDEOS,
+  upload: UPLOAD,
+  videoDetail: id => {
+    if (id) {
+      return `/videos/${id}`;
+    } else {
+      return VIDEO_DETAIL;
+    }
+  },
+  editVideo: id => {
+    if (id) {
+      return `/videos/${id}/edit`;
+    } else {
+      return EDIT_VIDEO;
+    }
+  },
+  deleteVideo: id => {
+    if (id) {
+      return `/videos/${id}/delete`;
+    } else {
+      return DELETE_VIDEO;
+    }
+  },
   gitHub: GITHUB,
-	githubCallback: GITHUB_CALLBACK,
+  githubCallback: GITHUB_CALLBACK,
   me: ME,
   facebook: FB,
   facebookCallback: FB_CALLBACK

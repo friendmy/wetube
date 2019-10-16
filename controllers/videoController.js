@@ -4,36 +4,36 @@ import Video from "../models/Video";
 // Home
 
 export const home = async (req, res) => {
-	try {
-		const videos = await Video.find({}).sort({ _id: -1 });
+  try {
+    const videos = await Video.find({}).sort({ _id: -1 });
     res.render("home", { pageTitle: "Home", videos });
-	} catch (error) {
-		console.log(error);
+  } catch (error) {
+    console.log(error);
     res.render("home", { pageTitle: "Home", videos: [] });
-	}
+  }
 };
 
 // Search
 
 export const search = async (req, res) => {
-	const {
-		query: { term: searchingBy }
-	} = req;
-	let videos = [];
-	try {
-		videos = await Video.find({
-			title: { $regex: searchingBy, $options: "i" }
-		});
-	} catch (error) {
-		console.log(error);
-	}
+  const {
+    query: { term: searchingBy }
+  } = req;
+  let videos = [];
+  try {
+    videos = await Video.find({
+      title: { $regex: searchingBy, $options: "i" }
+    });
+  } catch (error) {
+    console.log(error);
+  }
   res.render("search", { pageTitle: "Search", searchingBy, videos });
 };
 
 // Upload
 
 export const getUpload = (req, res) =>
-	res.render("upload", { pageTitle: "Upload" });
+  res.render("upload", { pageTitle: "Upload" });
 
 export const postUpload = async (req, res) => {
 	const {
@@ -84,16 +84,16 @@ export const getEditVideo = async (req, res) => {
 };
 
 export const postEditVideo = async (req, res) => {
-	const {
-		params: { id },
-		body: { title, description }
-	} = req;
-	try {
-		await Video.findOneAndUpdate({ _id: id }, { title, description });
-		res.redirect(routes.videoDetail(id));
-	} catch (error) {
-		res.redirect(routes.home);
-	}
+  const {
+    params: { id },
+    body: { title, description }
+  } = req;
+  try {
+    await Video.findOneAndUpdate({ _id: id }, { title, description });
+    res.redirect(routes.videoDetail(id));
+  } catch (error) {
+    res.redirect(routes.home);
+  }
 };
 
 // Delete Video
