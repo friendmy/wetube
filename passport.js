@@ -22,11 +22,13 @@ passport.use(
 );
 
 passport.use(
-  new FaceBookStrategy(
+  new FacebookStrategy(
     {
       clientID: process.env.FB_ID,
       clientSecret: process.env.FB_SECRET,
-      callbackURL: `https://test998.localtunnel.me${routes.facebookCallback}`,
+      callbackURL: `https://afraid-baboon-46.localtunnel.me${
+        routes.facebookCallback
+      }`,
       profileFields: ["id", "displayName", "photos", "email"],
       scope: ["public_profile", "email"]
     },
@@ -34,7 +36,5 @@ passport.use(
   )
 );
 
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
-passport.serializeUser((user, done) => done(null, user));
-passport.deserializeUser((user, done) => done(null, user));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
